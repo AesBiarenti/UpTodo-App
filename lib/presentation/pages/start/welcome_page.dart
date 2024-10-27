@@ -4,6 +4,8 @@ import 'package:uptodo_app/presentation/widgets/primary_button.dart';
 import 'package:uptodo_app/presentation/widgets/secondary_button.dart';
 import 'package:uptodo_app/presentation/widgets/svg_widget.dart';
 
+import 'package:uptodo_app/routes/routes.dart';
+
 class WelcomePage extends ConsumerStatefulWidget {
   const WelcomePage({super.key});
 
@@ -33,6 +35,9 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeIn,
       );
+    } else {
+      // Navigate to AuthPage if on the last page
+      Navigator.pushNamed(context, AppRoutes.authPage);
     }
   }
 

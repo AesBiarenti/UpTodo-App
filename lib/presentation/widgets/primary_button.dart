@@ -5,30 +5,36 @@ class PrimaryButton extends StatelessWidget {
   final double height;
   final Widget content;
   final void Function()? onPressed;
+  final bool isEnabled;
+
   const PrimaryButton({
     required this.height,
     required this.width,
     required this.content,
     required this.onPressed,
+    this.isEnabled = true,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height:  height,
+      height: height,
       width: width,
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: WidgetStatePropertyAll(
-            Colors.deepPurple.shade500,
+          backgroundColor: WidgetStateProperty.all(
+            isEnabled ? Colors.deepPurple.shade500 : Colors.deepPurple.shade200,
           ),
-          shape: WidgetStatePropertyAll(
+          foregroundColor: WidgetStateProperty.all(
+            isEnabled ? Colors.white : Colors.white.withOpacity(0.6),
+          ),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
           ),
         ),
-        onPressed: onPressed,
-        child: content
+        onPressed: isEnabled ? onPressed : null,
+        child: content,
       ),
     );
   }
