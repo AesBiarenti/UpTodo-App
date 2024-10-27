@@ -4,10 +4,12 @@ class SecondaryButton extends StatelessWidget {
   final double width;
   final double height;
   final Widget content;
+  final void Function()? onPressed;
   const SecondaryButton(
       {required this.height,
       required this.width,
       required this.content,
+      required this.onPressed,
       super.key});
 
   @override
@@ -16,7 +18,7 @@ class SecondaryButton extends StatelessWidget {
          height:  height,
       width: width,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ButtonStyle(
           shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),

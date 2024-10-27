@@ -4,10 +4,12 @@ class PrimaryButton extends StatelessWidget {
   final double width;
   final double height;
   final Widget content;
+  final void Function()? onPressed;
   const PrimaryButton({
     required this.height,
     required this.width,
     required this.content,
+    required this.onPressed,
     super.key,
   });
 
@@ -25,7 +27,7 @@ class PrimaryButton extends StatelessWidget {
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
           ),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: content
       ),
     );
