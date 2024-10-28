@@ -43,10 +43,7 @@ final lightTheme = ThemeData(
   primaryColor: Colors.grey.shade100,
   appBarTheme: AppBarTheme(
     backgroundColor: Colors.grey.shade100,
-    titleTextStyle: const TextStyle(
-        color: Color.fromARGB(255, 20, 20, 20),
-        fontSize: 22,
-        fontWeight: FontWeight.w700),
+    titleTextStyle: Sabitler.appBarFontLight,
   ),
   textTheme: TextTheme(
     bodyLarge: Sabitler.anaFontlight,
@@ -71,9 +68,9 @@ final darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: const Color.fromARGB(255, 20, 20, 20),
   appBarTheme: AppBarTheme(
+    
     backgroundColor: const Color.fromARGB(255, 20, 20, 20),
-    titleTextStyle: TextStyle(
-        color: Colors.grey.shade100, fontSize: 22, fontWeight: FontWeight.w700),
+    titleTextStyle: Sabitler.appBarFontDark,
   ),
   textTheme: TextTheme(
     bodyLarge: Sabitler.anaFontDark,
