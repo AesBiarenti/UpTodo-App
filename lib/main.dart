@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:uptodo_app/core/theme/theme_provider.dart';
 import 'package:uptodo_app/presentation/pages/home/home_page.dart';
+import 'package:uptodo_app/presentation/pages/start/welcome_page.dart';
 import 'package:uptodo_app/routes/routes.dart';
 
 void main() async {
@@ -18,14 +19,14 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeProvider);
     return MaterialApp(
-      //initialRoute: AppRoutes.welcome,
+      initialRoute: AppRoutes.welcome,
       onGenerateRoute: AppRoutes.generateRoute,
       debugShowCheckedModeBanner: false,
       themeMode: themeMode,
       theme: lightTheme,
       darkTheme: darkTheme,
       title: 'Material App',
-      home: const HomePage(),
+      home: const WelcomePage(),
     );
   }
 }
