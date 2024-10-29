@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uptodo_app/presentation/sheets/float_ac_bottom_sheets.dart';
+import 'package:uptodo_app/presentation/sheets/add_task_bottom_sheet/sheet_container.dart';
+
 
 class FloatAcButton extends StatefulWidget {
   const FloatAcButton({super.key});
@@ -9,13 +10,16 @@ class FloatAcButton extends StatefulWidget {
 }
 
 class _FloatAcButtonState extends State<FloatAcButton> {
-  final TextEditingController _taskController = TextEditingController();
-  final TextEditingController _descController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        floatAcButtonBottomSheet(context,_taskController,_descController);
+        showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return const SheetContainer();
+          },
+        );
       },
       child: Container(
         height: 70,

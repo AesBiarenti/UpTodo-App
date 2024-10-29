@@ -22,16 +22,16 @@ class _HomePageState extends ConsumerState<HomePage> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 16.0),
             child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.filter_list,
-                  size: 35,
-                )),
+              onPressed: () {},
+              icon: const Icon(
+                Icons.filter_list,
+                size: 35,
+              ),
+            ),
           ),
           actions: const [
-            CircleAvatar(
-              radius: 50,
-            )
+            CircleAvatar(),
+            SizedBox(width: 15),
           ],
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -42,7 +42,8 @@ class _HomePageState extends ConsumerState<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(child: SvgWidget(assetName: "Checklist-rafiki 1")),
-            Text("What do you want to do today?", style: TextStyle(fontSize: 20)),
+            Text("What do you want to do today?",
+                style: TextStyle(fontSize: 20)),
             Text("Tap + to add your tasks", style: TextStyle(fontSize: 20)),
           ],
         ),
