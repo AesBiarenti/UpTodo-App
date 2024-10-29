@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:uptodo_app/presentation/pages/auth/auth_page.dart';
 import 'package:uptodo_app/presentation/pages/auth/login/login_page.dart';
 import 'package:uptodo_app/presentation/pages/auth/register/create_account_page.dart';
+import 'package:uptodo_app/presentation/pages/home/home_page.dart';
 import 'package:uptodo_app/presentation/pages/start/welcome_page.dart';
 
 class AppRoutes {
@@ -25,6 +26,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const LoginPage());
       case signupPage:
         return MaterialPageRoute(builder: (_) => const CreateAccountPage());
+      case homePage:
+        return CupertinoPageRoute(builder: (context) => const HomePage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

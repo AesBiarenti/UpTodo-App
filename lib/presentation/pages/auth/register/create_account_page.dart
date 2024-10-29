@@ -126,7 +126,11 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     "Login",
                     style: TextStyle(color: Colors.white),
                   ),
-                  onPressed: _isButtonEnabled ? () {} : null,
+                  onPressed: _isButtonEnabled
+                      ? () {
+                          Navigator.pushNamed(context, AppRoutes.homePage);
+                        }
+                      : null,
                   isEnabled: _isButtonEnabled,
                 ),
               ),
