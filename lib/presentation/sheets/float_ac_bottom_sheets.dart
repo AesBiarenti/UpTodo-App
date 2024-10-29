@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:uptodo_app/presentation/widgets/svg_widget.dart';
 import 'package:uptodo_app/presentation/widgets/textfield.dart';
 
-void floatAcButtonBottomSheet(
-    BuildContext context, TextEditingController controller,TextEditingController controller2) {
+void floatAcButtonBottomSheet(BuildContext context,
+    TextEditingController controller, TextEditingController controller2) {
   showModalBottomSheet(
     context: context,
     builder: (context) {
@@ -22,11 +23,25 @@ void floatAcButtonBottomSheet(
                   controller: controller,
                   placeHolder: "Add Task",
                   keyboardType: TextInputType.text),
-                      const SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFieldWidget(
                   controller: controller,
                   placeHolder: "Description",
-                  keyboardType: TextInputType.text)
+                  keyboardType: TextInputType.text),
+              const SizedBox(height: 10),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      SvgWidget(assetName: "timer"),
+                      SvgWidget(assetName: "tag"),
+                      SvgWidget(assetName: "flag"),
+                    ],
+                  ),
+                  SvgWidget(assetName: "send")
+                ],
+              ),
             ],
           ),
         ),
