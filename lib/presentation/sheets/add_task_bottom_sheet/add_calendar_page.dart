@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:uptodo_app/presentation/widgets/primary_button.dart';
+import 'package:uptodo_app/presentation/widgets/secondary_button.dart';
 
 class CalendarPage extends StatefulWidget {
   const CalendarPage({super.key});
@@ -39,18 +41,18 @@ class _CalendarPageState extends State<CalendarPage> {
 
   String _getMonthName(int month) {
     const monthNames = [
-      "Ocak",
-      "Şubat",
-      "Mart",
-      "Nisan",
-      "Mayıs",
-      "Haziran",
-      "Temmuz",
-      "Ağustos",
-      "Eylül",
-      "Ekim",
-      "Kasım",
-      "Aralık"
+      "Jan",
+      "Fab",
+      "March",
+      "April",
+      "May",
+      "Jun",
+      "Jully",
+      "Augst",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
     ];
     return monthNames[month - 1];
   }
@@ -58,7 +60,7 @@ class _CalendarPageState extends State<CalendarPage> {
   @override
   Widget build(BuildContext context) {
     final today = DateTime.now();
-    const weekDays = ["Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz"];
+    const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
     return Column(
       children: [
@@ -145,6 +147,24 @@ class _CalendarPageState extends State<CalendarPage> {
             },
           ),
         ),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SecondaryButton(
+              height: 50,
+              width: 80,
+              content: const Text("Back"),
+              onPressed: () {},
+            ),
+            PrimaryButton(
+              height: 50,
+              width: 80,
+              content: const Text("Next"),
+              onPressed: () {},
+            )
+          ],
+        )
       ],
     );
   }

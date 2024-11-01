@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uptodo_app/presentation/widgets/primary_button.dart';
+import 'package:uptodo_app/presentation/widgets/secondary_button.dart';
 
 class TimePage extends StatefulWidget {
   const TimePage({super.key});
@@ -21,7 +23,7 @@ class _TimePageState extends State<TimePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            'Saat Seçimi',
+            'Choose Time',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20),
@@ -41,9 +43,27 @@ class _TimePageState extends State<TimePage> {
           const SizedBox(height: 20),
           // Seçilen saat gösterimi
           Text(
-            'Seçilen Saat: ${selectedTime.inHours.toString().padLeft(2, '0')}:${(selectedTime.inMinutes % 60).toString().padLeft(2, '0')}',
+            '${selectedTime.inHours.toString().padLeft(2, '0')}:${(selectedTime.inMinutes % 60).toString().padLeft(2, '0')}',
             style: const TextStyle(fontSize: 24),
           ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SecondaryButton(
+                height: 50,
+                width: 80,
+                content: const Text("Back"),
+                onPressed: () {},
+              ),
+              PrimaryButton(
+                height: 50,
+                width: 80,
+                content: const Text("Next"),
+                onPressed: () {},
+              )
+            ],
+          )
         ],
       ),
     );
